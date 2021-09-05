@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Portfolio</title> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <link rel="stylesheet" href="stylesheet.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <style>
+            * {
+                box-sizing:border-box;
+            }
+            body {
+                margin:0;
+                padding:0;
+            }
+            img {
+                max-width:100%;
+                height:auto;
+            }
+             nav {
+                grid-column:1/4;
+                color:#fff;
+                font-size:20px;
+                display:flex;
+                justify-content:space-around;
+                background-color: rgba(0,0,0,0.8);
+                font-family:'quasimoda', sans-serif;      
+                height:90px;
+                align-items:center;
+                top:0;
+                width:100%; 
+            }
+            .hero {
+                display:grid;
+                grid-template-columns:1fr 1fr 1fr;
+                background-image:url(images/dc-mobile.jpg);
+                background-repeat:no-repeat;
+                background-attachment:fixed;
+                background-position:right top;
+                background-size:cover;
+                background-color:rgba(0,0,0,0.2);
+                background-blend-mode:darken;
+                height:100vh;
+                padding:40px;
+            }
+            .profile {
+                grid-column:1/4;
+                margin-top:40px;
+                text-align: center;
+            }
+            hr.white {
+                border-top: 5px solid;
+                border-radius: 5px;
+                border-color:#fff;
+                margin-left:50px;
+                margin-right:50px;
+            }
+              hr.black {
+                border-top: 5px solid;
+                border-radius: 5px;
+                border-color:#000;
+                margin-left:50px;
+                margin-right:50px;
+            }
+            .large-text {
+                grid-column:1/4;
+                color:#fff;
+                text-align: center;
+                font-size:20px;
+                margin-bottom:100px;
+            }
+            .xd {
+                display:grid;
+                grid-template-columns:1fr 1fr 1fr;
+                justify-content: center;
+                grid-auto-rows:minmax(250px, auto); 
+                background-color:#b3d0f2;
+            }
+            .xd-title {
+                grid-column: 1/4; 
+            }
+            .xd-summary {
+                grid-column: 1/4;
+            }
+            .icare-1 {
+                grid-column: 1/4; 
+                width:325px;
+                padding:12px;
+                border:solid 1px #aaa;
+                border-radius:10px;
+                margin-top:12px;
+                margin-left:80px;
+                margin-bottom:50px; 
+                background-color:rgba(0,0,0,0.5);   
+                color:#fff;
+            }
+            .icare-2 {
+              grid-column: 1/4;
+                width:325px;
+                padding:12px;
+                border:solid 1px #aaa;
+                border-radius:10px;
+                margin-top:12px;
+                margin-left:80px;
+                margin-bottom:50px; 
+                background-color:rgba(0,0,0,0.5);   
+                color:#fff;
+            }
+            .icare-3 {
+              grid-column: 1/4;
+                width:325px;
+                padding:12px;
+                border:solid 1px #aaa;
+                border-radius:10px;
+                margin-top:12px;
+                margin-left:80px;
+                margin-bottom:50px; 
+                background-color:rgba(0,0,0,0.5);   
+                color:#fff;
+            }
+            .icare-4 {
+              grid-column: 1/4;
+                width:325px;
+                padding:12px;
+                border:solid 1px #aaa;
+                border-radius:10px;
+                margin-top:12px;
+                margin-left:80px;
+                margin-bottom:50px; 
+                background-color:rgba(0,0,0,0.5);   
+                color:#fff;
+            }
+            .icare-5 {
+              grid-column: 1/4;
+                width:325px;
+                padding:12px;
+                border:solid 1px #aaa;
+                border-radius:10px;
+                margin-top:12px;
+                margin-left:80px;
+                margin-bottom:50px; 
+                background-color:rgba(0,0,0,0.5);   
+                color:#fff;
+            }
+            .icare-6 {
+              grid-column: 1/4;
+                width:325px;
+                padding:12px;
+                border:solid 1px #aaa;
+                border-radius:10px;
+                margin-top:12px;
+                margin-left:80px;
+                margin-bottom:50px; 
+                background-color:rgba(0,0,0,0.5);   
+                color:#fff;
+            }
+            .photoshop {
+                display:grid;
+                grid-template-columns:1fr 1fr;
+                justify-content: center;
+                grid-auto-rows:minmax(250px, auto);
+                background-image:url(images/toronto-mobile.jpg);
+                background-repeat:no-repeat;
+                background-attachment:fixed;
+                background-position:right top;
+                background-size:cover;
+                color:#eee;
+                background-color:rgba(0,0,0,0.5);
+                background-blend-mode:darken;
+            }
+            .photoshop-title {
+                grid-column: 1/3;
+            }
+            .photoshop-box1 {
+                grid-column:1/3;
+                text-align: center;
+                padding-bottom:50px;
+                margin-left:20px;
+                margin-right:20px;
+            }
+            .photoshop-box2 {
+                grid-column:1/3;
+                text-align: center;
+                padding-bottom:50px;
+                margin-left:20px;
+                margin-right:20px;
+            }
+            .illustrator {
+                display:grid;
+                grid-template-columns:1fr 1fr 1fr;
+                justify-content: center;
+                grid-auto-rows:minmax(250px, auto);   
+                background-color:#b3d0f2;
+            }
+            .illustrator-title {
+                grid-column: 1/4;
+            }
+            .illustrator-box1 {
+                grid-column:1/4;
+                text-align: center;
+                margin-bottom:50px;
+                border: 4px solid #000;
+                margin-left:25px;
+                margin-right:25px;
+                padding-top:25px;
+                padding-bottom:25px;
+                background-color:#f8f8ff;
+                border-radius:10px;
+            }
+            .illustrator-box2 {
+                grid-column:1/4;
+                text-align: center;
+                margin-bottom:50px;
+                border: 4px solid #000;
+                margin-left:25px;
+                margin-right:25px;
+                padding-top:25px;
+                padding-bottom:25px;
+                background-color:#f8f8ff;
+                border-radius:10px;
+            }
+            .illustrator-box3 {
+                grid-column:1/4;
+                margin-bottom:50px;
+                text-align: center;
+                border: 4px solid #000;
+                margin-left:25px;
+                margin-right:25px;
+                padding-top:25px;
+                padding-bottom:25px;
+                background-color:#f8f8ff;
+                border-radius:10px;
+            }
+            .indesign {
+                display:grid;
+                grid-template-columns: 1fr 1fr;
+                justify-content: center;
+                grid-auto-rows:minmax(250px, auto);
+                background-image:url(images/hangzhou-mobile.jpg);
+                background-repeat:no-repeat;
+                background-attachment:fixed;
+                background-position:right top;
+                background-size:cover;
+                color:#eee;
+                background-color:rgba(0,0,0,0.5);
+                background-blend-mode:darken;
+            }
+            .indesign-title {
+                grid-column: 1/3;
+            }
+            .indesign-summary {
+                grid-column: 1/3;
+                text-align: center;
+            }
+            .indesign-box1 {
+                grid-column:1/3;
+                text-align: center;
+                padding:15px;
+            }
+            .indesign-box2 {
+                grid-column:1/3;
+                text-align: center;
+                padding:15px;
+                padding-bottom:50px;
+            }
+            .contact {
+                display:grid;
+                grid-template-columns: 1fr 1fr;
+                grid-auto-rows:minmax(250px, auto); 
+                background-color:#b3d0f2;
+                
+            }
+             .contact-title {
+                grid-column: 1/3;
+            }
+            .contact-info {
+                grid-column:1/3;
+                padding-bottom: 50px;
+                text-align: center;
+            }
+            .emails {
+                grid-column:1/3;
+                padding-bottom: 50px;
+                text-align: center;
+            }
+            #back2Top {
+width:40px; /* width of button */
+height:40px; /* height of button */
+line-height:30px;
+overflow:hidden;
+z-index:999;
+display:none; /* initially not displayed */
+cursor:pointer;
+transform:rotate(270deg); /* turns right arrow 270 degrees */
+position:fixed; /* fixed at bottom corner */
+bottom:30px; /* distance from bottom */
+right:30px; /* distance from right */
+padding:5px 5px 5px 5px; /* padding around arrow */
+border:1px solid #000;
+border-radius:3px;
+background-color:#fff;
+color:#eee; /* color of arrow */
+text-align:center;
+font-size:20px; /* size of the arrow */
+text-decoration:none;
+}
+#back2Top:link {
+background-color:#fff;
+color:#b3d0f2;
+}
+#back2Top:visited {
+background-color:#fff;
+color:#b3d0f2;
+}
+#back2Top:hover {
+background-color:#fff;
+color:#000;
+}
+#back2Top:active {
+background-color:#fff;
+color:#b3d0f2;
+}
+@media only screen and (min-width:900px) {
+    .hero {
+        background-image:url(images/dc-big.jpg);
+        display:grid;
+        grid-template-columns: 1fr 1fr;  
+    }
+    .profile {
+        grid-column:1/2;
+        margin-top:150px;
+        margin-left:100px;
+    }
+    .large-text {
+        grid-column:2/3;
+        margin-top:100px;
+        margin-right:200px;
+        margin-bottom:200px;
+        font-size:25px;
+        border: 5px solid #fff;
+        border-radius: 10px;
+        background-color:rgba(0,0,0,0.5);
+    }
+    p {
+        font-size:1.2rem;
+    }
+    .photoshop {
+        background-image:url(images/toronto.jpg)
+    }
+    .xd-summary {
+        margin-left:200px;
+        margin-right:200px;
+    }
+    .icare-1 {
+        grid-column:1/2;
+    }
+    .icare-2 {
+        grid-column:2/3;
+    }
+    .icare-3 {
+        grid-column:3/4;
+    }
+    .icare-4 {
+        grid-column:1/2;
+    }
+    .icare-5 {
+        grid-column:2/3;
+    }
+    .icare-6 {
+        grid-column:3/4;
+    }
+    .photoshop-box1 {
+        grid-column: 1/2;
+        margin-left:25px;
+    }
+    .photoshop-box2 {
+        grid-column:2/3;
+        margin-top:50px;
+        margin-right:25px;
+    }
+    .illustrator-box1 {
+        grid-column:1/2;
+    }
+    .illustrator-box2 {
+        grid-column:2/3;
+        padding-top:100px;
+    }
+    .illustrator-box3 {
+        grid-column:3/4;
+        padding-top:145px;
+    }
+    .indesign {
+        background-image:url(images/hangzhou.jpg);
+    }
+    .indesign-summary {
+        grid-column: 1/3;
+        margin-left:50px;
+        margin-right: 50px;
+    }
+    .indesign-box1 {
+        grid-column: 1/2;
+        margin-left:50px;
+    }
+    .indesign-box2 {
+        grid-column: 2/3;
+        margin-right:50px;
+    }
+    .contact-info {
+        grid-column: 1/2;
+    }
+    .emails {
+        grid-column: 2/3;
+    }
+}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+              <nav>
+                <div><a href="#xd">XD</a></div>
+                <div><a href="#photoshop">Photoshop</a></div>
+                <div><a href="#illustrator">Illustrator</a></div>
+                <div><a href="#indesign">InDesign</a></div>
+                <div><a href="#contact">Contact</a></div>
+            </nav>
+            <div class="hero">
+                   <div class="profile">
+                    <img src="images/me-mobile.png" alt="me">
+                </div>
+                <div class="large-text">
+                    <h1>Stephanie Soucek</h1>
+                    <hr class="white" style="margin-left:10px; margin-right:10px">
+                    <p style="margin-top:25px">I’m a Media Arts and Design major at James Madison University currently looking for internship opportunities. I’m interested in UX design/research as well as graphic design. Take a look at some of my work down below!</p>
+                </div>
+            </div>
+            <div class="xd" id="xd">
+                <div class="xd-title">
+                <h2 style="color:#000"> Adobe XD</h2>
+                <hr class="black">
+                </div>
+                <div class="xd-summary" data-aos="fade-up" data-aos-duration="1000">
+                    <p>These photos showcase the high-fidelity prototype of our app "iCare" that I created alongside a partner. Together, we researched and designed an app made to be a safe space for people to record their daily thoughts/emotions and express their feelings, find relaxing soundscapes/podcasts to listen to, and engage in important conversations about mental health through discussion boards. </p>
+                </div>
+                <div class="icare-1" data-aos="fade-up" data-aos-duration="1000">
+                <img src="images/icare-loading-screen-mobile.png" alt="icare loading screen"> 
+                    <p>iCare loading screen</p>
+                </div>
+                <div class="icare-2" data-aos="fade-up" data-aos-duration="1400">
+                <img src="images/icare-discussion-board-mobile.png" alt="icare discussion board">
+                    <p>iCare discussion board</p>
+                </div>
+                <div class="icare-3" data-aos="fade-up" data-aos-duration="1800">
+                <img src="images/icare-discussion-post-mobile.png" alt="icare discussion post">
+                    <p>iCare discussion post</p>
+                </div>
+                <div class="icare-4" data-aos="fade-up" data-aos-duration="1000">
+                <img src="images/icare-discussion-comments-mobile.png" alt="icare discussion comments">
+                    <p>iCare discussion comments</p>
+                </div>
+                <div class="icare-5" data-aos="fade-up" data-aos-duration="1400">
+                <img src="images/icare-podcasts-mobile.png" alt="icare podcasts">
+                    <p>iCare podcasts</p>
+                </div>
+                <div class="icare-6" data-aos="fade-up" data-aos-duration="1800">
+                <img src="images/care-diary-mobile.png" alt="icare diary">
+                    <p>iCare diary</p>
+                </div>
+            </div>
+            <div class="photoshop" id="photoshop">
+                <div class="photoshop-title">
+                <h2>Adobe Photoshop</h2>
+                <hr class="white">
+                </div>
+                 <div class="photoshop-box1" data-aos="fade-up" data-aos-duration="1200">
+                    <img src="images/cd-cover.png" alt="cd cover">
+                     <p>This CD cover of Sam Kim's album "Sun and Moon" emphasizes the calm and peaceful tone of the album while visualizing the concept of the sun and moon coming together.</p>
+                </div>
+                <div class="photoshop-box2" data-aos="fade-up" data-aos-duration="1600">
+                    <img src="images/carousel.jpg" alt="carousel">
+                    <p> Social media posts promoting the 2021 MadRush Conference; geometric shapes and arrows add a sense of modernity while the purple and gold color palette showcase true JMU pride.</p>
+                </div>
+            </div>
+            <div class="illustrator" id="illustrator">
+                <div class="illustrator-title">
+                    <h2 style="color:#000">Adobe Illustrator</h2>
+                    <hr class="black">
+                </div>
+                <div class="illustrator-box1" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="images/finding-fido-mobile.png" alt="finding fido">
+                    <p>This logo was created for my fictional company "Finding Fido", which was created to help people find local pet-friendly places in the Harrisonburg area. I wanted to emphasize a more lighthearted and endearing tone, so I decided to design a dog mascot and also chose a more playful font to help convey that.</p>
+                </div>
+                <div class="illustrator-box2" data-aos="fade-up" data-aos-duration="1400">
+                    <img src="images/boost-mobile.png" alt="boost">
+                    <p>This logo was designed for a student entrepreneur's product "Boost", described as a juice-based serotonin boosting drink. Using the description as inspiration, I took the serotonin molecule and incorporated it into the name of the product itself, creating a cohesive and clever brand identity.</p>
+                </div>
+                <div class="illustrator-box3" data-aos="fade-up" data-aos-duration="1800">
+                    <img src="images/harrisonburg-mobile.png" alt="harrisonburg">
+                    <p>This logo was created for a hand-coded website for exploring Harrisonburg and showcasing what it has to offer. The logo is simple but clever, with the words and imagery being interwoven to express the city's natural beauty.</p>
+                </div>   
+            </div>
+            <div class="indesign" id="indesign">
+                <div class="indesign-title">
+                <h2> Adobe InDesign</h2>
+                <hr class="white">
+                </div> 
+                <div class="indesign-summary" data-aos="fade-up" data-aos-duration="1000">
+                    <p>These two spreads focus in on an article written about the Hong Kong Umbrella Revolution, showcasing my abilities to create more serious and dramatic pieces. I chose to keep the color palette black and white with the accent color being yellow - the Umbrella Revolution's official color.</p><br>
+                    <a href="https://indd.adobe.com/view/827e579c-e80e-412f-82bc-0bad270dd8ce" class="indesign-link">Click for full article</a>
+                </div>
+                <div class="indesign-box1" data-aos="fade-up" data-aos-duration="1400">
+                    <img src="images/hong-kong-spread1-mobile1.jpg" alt="hong kong spread 1">
+                </div>
+                <div class="indesign-box2" data-aos="fade-up" data-aos-duration="1800">
+                    <img src="images/hong-kong-spread2-mobile2.jpg" alt="hong kong spread 2">
+                </div>
+            </div>
+            <div class="contact" id="contact">
+                <div class="contact-title">
+                    <h2 style="color:#000"> Contact Me</h2>
+                    <hr class="black">
+                </div>
+                <div class="contact-info">
+                    <p>Stephanie Soucek<br>
+                       9672 Laurencekirk Pl<br>
+                       Bristow, VA 20136</p>
+                </div>
+                <div class="emails">
+                    <p><b>email:</b>
+                    <a href="mailto:soucekstephanie@gmail.com" class="footer-links">soucekstephanie@gmail.com</a></p>
+                    <p><b>school email:</b>
+                    <a href="mailto:souceksn@dukes.jmu.edu" class="footer-links">souceksn@dukes.jmu.edu</a></p>
+                </div>
+            </div>
+        </div>  
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
+<div><a id="back2Top" title="Back to top" href="#">&#10148;</a></div>
+
+<script>
+/* Scroll to top when arrow up clicked BEGIN */
+$(window).scroll(function() {
+var height = $(window).scrollTop();
+if (height > 100) {
+$('#back2Top').fadeIn();
+} else {
+$('#back2Top').fadeOut();
+}
+});
+$(document).ready(function() {
+$("#back2Top").click(function(event) {
+event.preventDefault();
+$("html, body").animate({ scrollTop: 0 }, "slow");
+return false;
+});
+
+});
+/* Scroll to top when arrow up clicked END */
+</script>
+    </body>
+</html>
